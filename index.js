@@ -1,24 +1,24 @@
-const obj = {
+const SimpleObj = {
   some: 'some',
   dom: 'text',
   arr: [1, 2, 3, 4, 5],
   tom: 'there',
 };
 
-let arrValues = [];
+let ArrValues = [];
 
-arrValues = F1(obj);
+ArrValues = First(SimpleObj);
 
-console.log(arrValues);
+console.log(ArrValues);
 
-function F1(x) {
-  let arr = []; 
+function First(x) {
+  const ArrNew = []; 
   for (let key in x) {
-    Array.isArray(obj[key]) ? f2(obj[key], arr) : arr.push(obj[key]);
+    Array.isArray(x[key]) ? Second(x[key], ArrNew) : ArrNew.push(x[key]);
   }
-  return arr;
+  return ArrNew;
 }
 
-function f2(y, arr) {
-  y.map((el) => arr.push(el));
+function Second(y, ArrNew) {
+  y.map((el) => ArrNew.push(el));
 }
